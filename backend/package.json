@@ -1,0 +1,27 @@
+{
+  "name": "ofertas-backend",
+  "version": "1.0.0",
+  "description": "Projeto de App para Lista de compras e anúncio de ofertas em supermercados",
+  "main": "src/loader.js",
+  "scripts": {
+    "dev": "nodemon",
+    "production": "pm2 start src/loader.js --name ofertas-backend"
+  },
+  "author": "Luiz Honorato",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-query-int": "^2.0.0",
+    "jsonwebtoken": "^8.1.0",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.13.9",
+    "mongoose-paginate": "^5.0.3",
+    "node-restful": "^0.2.6",
+    "pm2": "^2.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
