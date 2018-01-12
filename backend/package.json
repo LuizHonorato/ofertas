@@ -1,7 +1,7 @@
 {
   "name": "ofertas-backend",
   "version": "1.0.0",
-  "description": "Projeto de App para Lista de compras e anúncio de ofertas em supermercados",
+  "description": "",
   "main": "src/loader.js",
   "scripts": {
     "dev": "nodemon",
