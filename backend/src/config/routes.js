@@ -10,10 +10,10 @@ module.exports = function(server) {
     protectedApi.use(auth)
 
     //Rota de cadastro de estabelecimentos
-    const Store = require('../api/Store/StoreService')
+    const Store = require('../api/store/storeService')
     Store.register(protectedApi, './stores')
 
     //Rota de cadastro de produtos
-    const Product = require('../api/Product/ProductService')
+    const Product = require('../api/product/productService')
     Product.register(protectedApi, './products')
 }
