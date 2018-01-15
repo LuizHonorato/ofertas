@@ -1,3 +1,5 @@
+import { open } from 'fs';
+
 const express = require('express')
 const auth = require('./auth')
 
@@ -16,4 +18,13 @@ module.exports = function(server) {
     //Rota de cadastro de produtos
     const Product = require('../api/product/productService')
     Product.register(protectedApi, './products')
+
+    //Rotas abertas
+    const openApi = express.Router()
+    server.use('/oapi', openApi)
+
+    const AuthService = require('../api/user/authService')
+    openApi.post('/login', AuthService.login)
+    openApi.post('/signup', AuthService.signup)
+    openApi.post('/validateToken', AuthService.validateToken)
 }
