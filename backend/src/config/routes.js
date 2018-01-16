@@ -1,5 +1,3 @@
-import { open } from 'fs';
-
 const express = require('express')
 const auth = require('./auth')
 
@@ -13,11 +11,11 @@ module.exports = function(server) {
 
     //Rota de cadastro de estabelecimentos
     const Store = require('../api/store/storeService')
-    Store.register(protectedApi, './stores')
+    Store.register(protectedApi, '/stores')
 
     //Rota de cadastro de produtos
     const Product = require('../api/product/productService')
-    Product.register(protectedApi, './products')
+    Product.register(protectedApi, '/products')
 
     //Rotas abertas
     const openApi = express.Router()

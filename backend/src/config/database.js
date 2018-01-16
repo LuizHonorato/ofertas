@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
-module.exports = mongoose.connect('mongodb://localhost/ofertas')
+const url = 'mongodb://localhost/ofertas'
+
+module.exports = mongoose.connect(url, {useMongoClient: true})
