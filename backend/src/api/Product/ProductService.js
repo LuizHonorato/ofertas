@@ -18,13 +18,14 @@ Product.route('count', (req, res, next) => {
 
 //Esse método retorna uma rota com uma query obtendo os produtos setados com promoção na base de dados.
 Product.route('promos', (req, res, next) => {
-    Product.find({is_promotion: true}).toArray(function(error, result) {
-        if (error){
+    Product.find({is_promotion: true}, (error, promos) => {
+        if(error) {
             res.status(500).json({errors: [error]})
         } else {
-            res.json({result})
+            res.json({promos})
         }
     })
+
 })
 
 module.exports = Product

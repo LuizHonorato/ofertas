@@ -1,5 +1,5 @@
 const express = require('express')
-const auth = require('./auth')
+//const auth = require('./auth')
 
 module.exports = function (server) {
 
@@ -7,7 +7,7 @@ module.exports = function (server) {
     const protectedApi = express.Router()
     server.use('/api', protectedApi)
 
-    protectedApi.use(auth)
+    //protectedApi.use(auth)
 
     //Rota de cadastro de estabelecimentos
     const Store = require('../api/store/storeService')
