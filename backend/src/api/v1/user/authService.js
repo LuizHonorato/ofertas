@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const User = require('../models/model')
+const User = require('./user')
 const env = require('../../../.env')
 
 const emailRegex = /\S+@\S+\.\S+/
