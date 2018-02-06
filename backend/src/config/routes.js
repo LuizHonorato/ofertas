@@ -10,18 +10,18 @@ module.exports = function (server) {
     //protectedApi.use(auth)
 
     //Rota de cadastro de estabelecimentos
-    const Store = require('../api/v1/services/storeService')
+    const Store = require('../api/v1/store/storeService')
     Store.register(protectedApi, '/stores')
 
     //Rota de cadastro de produtos
-    const Product = require('../api/v1/services/productService')
+    const Product = require('../api/v1/product/productService')
     Product.register(protectedApi, '/products')
 
     //Rotas abertas
     const openApi = express.Router()
     server.use('/oapi', openApi)
 
-    const AuthService = require('../api/v1/services/authService')
+    const AuthService = require('../api/v1/user/authService')
     openApi.post('/login', AuthService.login)
     openApi.post('/signup', AuthService.signup)
     openApi.post('/validateToken', AuthService.validateToken)
